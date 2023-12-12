@@ -12,6 +12,8 @@ import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 import { seoPlugin } from "vuepress-plugin-seo2";
 import { blogPlugin } from "vuepress-plugin-blog2";
 import { giscusCommentPlugin } from './@plugin/giscus-comment';
+import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
+import { prefersColorSchemePlugin } from './@plugin/prefers-color-scheme';
 
 const hostName = 'jjaw.cn';
 
@@ -37,6 +39,11 @@ export default defineUserConfig({
      */
     theme: { name: "jjaw-cn-page" },
     plugins: [
+        /**
+        * 颜色模式切换插件，某些插件用到了vuepress自带主题的颜色模式，这个插件从默认主题修改而来。在html标签添加对应颜色class
+        * 自己瞎写的 ./@plugin/prefers-color-scheme
+        */
+        prefersColorSchemePlugin(),
         /**
          * 自动注册布局
          * 自己瞎写的 ./@plugin/auto-layouts
@@ -97,6 +104,20 @@ export default defineUserConfig({
         mdEnhancePlugin({
             //开启组件
             component: true,
+            //开启选项卡
+            tabs: true,
+            // 启用图片懒加载
+            imgLazyload: true,
+            // 启用图片标记
+            imgMark: true,
+            // 启用图片大小
+            imgSize: true,
+            // 启用提示容器
+            hint: true,
+            // 启用任务列表
+            tasklist: true,
+            // 启用代码块分组
+            codetabs: true,
         }),
         /**
          * sitemap生成
@@ -146,7 +167,7 @@ export default defineUserConfig({
                 key: "tags",
                 path: "/tags/",
                 layout: "Tags",
-                frontmatter(localePath){
+                frontmatter(localePath) {
                     return {
                         title: "标签页",
                         description: "通过标签浏览文章列表."
@@ -186,6 +207,17 @@ export default defineUserConfig({
             repo:"用户名/查看名",
             repoId:"查看id",
             mapping:"pathname" ,
+        }),
+        /**
+         * https://v2.vuepress.vuejs.org/zh/reference/plugin/external-link-icon.html
+         * 该插件会为你 Markdown 内容中的外部链接添加一个图标
+         */
+        externalLinkIconPlugin({
+            locales: {
+                "/": {
+                    openInNewWindow: '在新窗口打开',
+                }
+            }
         }),
     ]
 });

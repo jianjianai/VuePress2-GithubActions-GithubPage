@@ -1,0 +1,19 @@
+.vp-code-tabs-nav{
+    height: 2.35rem;
+}
+
+.vp-code-tabs pre.language-bash{
+    border-radius: 0px 0px 6px 6px;
+}
+
+html .vp-code-tabs{
+    --code-tabs-nav-text-color:var(--color);
+    --code-tabs-nav-bg-color:#cccccc;
+    --code-bg-color:#eee;
+    --code-tabs-nav-hover-color:#d8d8d8;
+}
+html.dark .vp-code-tabs{
+    --code-tabs-nav-bg-color:#333;
+    --code-bg-color:#555;
+    --code-tabs-nav-hover-color:#636363;
+}

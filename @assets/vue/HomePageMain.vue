@@ -5,7 +5,7 @@ import backgroundImage from "../imgs/home-background.jpg"
 </script>
 <template>
     <div class="page-background">
-        <div class="background-image" :style="{'background-image':`url(${backgroundImage})`}">
+        <div class="background-image" :style="{ 'background-image': `url(${backgroundImage})` }">
             <div class="page">
                 <div class="mengmain">
                     <div class="title">
@@ -48,10 +48,8 @@ import backgroundImage from "../imgs/home-background.jpg"
     text-shadow: 0rem 0rem 0.2rem #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-    .title {
-        color: rgb(255 206 0);
-    }
+html.dark .title {
+    color: rgb(255 206 0);
 }
 
 .title,
@@ -154,10 +152,8 @@ import backgroundImage from "../imgs/home-background.jpg"
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-    .page {
-        background-color: rgba(0, 0, 0, 0.4);
-    }
+html.dark .page {
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 

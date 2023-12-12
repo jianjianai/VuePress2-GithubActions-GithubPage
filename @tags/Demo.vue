@@ -14,6 +14,7 @@ const props = defineProps<{
 </template>
 <style scoped>
 .title {
+    border-radius: 8px 8px 0px 0px;
     padding: 0.5rem 0.8rem;
     font-size: 1rem;
     font-weight: bolder;
