@@ -182,18 +182,9 @@ export default defineUserConfig({
          * 自己瞎写的 ./@plugin/giscus-comment
          */
         giscusCommentPlugin({
-            repo:"jianjianai/vue.js.jjaw.cn.articles",
-            repoId:"R_kgDOKsd6yQ",
-            category:"vue.js.jjaw.cn.articles",
-            categoryId:"DIC_kwDOKsd6yc4CbRMH" ,
+            repo:"用户名/查看名",
+            repoId:"查看id",
             mapping:"pathname" ,
-            strict:"0",
-            reactionsEnabled:"1" ,
-            emitMetadata:"1" ,
-            inputPosition:"bottom" ,
-            theme:"preferred_color_scheme" ,
-            lang:"zh-CN",
-            loading:"eager"
         }),
     ]
 });
