@@ -31,6 +31,7 @@ export default defineUserConfig({
             level: [2, 3, 4]
         }
     },
+    shouldPrefetch: false,
     /**
      * 不需要主题awa，空主题就ok
      */
